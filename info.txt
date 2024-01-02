@@ -3,10 +3,6 @@ Night Mode [Toggle button]
 
 Verba: Depth and authenticity
 
-create a repo and push to GitHub via git 
-git clone https://github.com/heli-toon/verba
-
-create a dark theme light theme switch by replacing light class with dark class on the body. with reactjs when a checkbox is checked it should be dark. I already have the css done
 
 Reactjs when a accent color link is clicked, replace the current accent color with the clicked accent color.
 
@@ -15,6 +11,7 @@ Route the pages together with React Router
 fetch data about a word from api.dictionaryapi.dev/v2/entries/en/<word>. I only want word, meaning, wordclass/partofspeech, phonetics, pronounciation, examples of use ,synonyms&antonyms and display them
 
 Search functionality. As user types checks api for closest match words.  
+
 
 Is it possible to check how much local storage is remaining? If so, create a meter that represents the amount of localStorage used as well as a percentage
 
