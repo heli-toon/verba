@@ -1,8 +1,31 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function Settings() {
+  // Accent
+  const [accentColor, setAccentColor] = useState("default");
+
+  useEffect(() => {
+    const storedAccentColor = localStorage.getItem("accentColor");
+    if (storedAccentColor) {
+      setAccentColor(storedAccentColor);
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("accentColor", accentColor);
+    document.body.classList.remove(
+      "default",
+      "orange",
+      "pink",
+      "purple",
+      "gray",
+      "green"
+    );
+    document.body.classList.add(accentColor);
+  }, [accentColor]);
+
   // Persisting the theme
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+
   useEffect(() => {
     if (localStorage.getItem("isDarkTheme") === "true") {
       setIsDarkTheme(true);
@@ -18,10 +41,16 @@ export default function Settings() {
     localStorage.setItem("isDarkTheme", isDarkTheme);
   }, [isDarkTheme]);
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     setIsDarkTheme(!isDarkTheme);
     localStorage.setItem("isDarkTheme", !isDarkTheme);
+  }, [isDarkTheme]);
+
+  const setAccentColorPreference = (color) => {
+    setAccentColor(color);
+    localStorage.setItem("accentColor", color);
   };
+
   return (
     <>
       <main>
@@ -49,12 +78,36 @@ export default function Settings() {
               Accent Color
             </h2>
             <div className="accent-colors">
-              <a href="#" className="accent-color default"></a>
-              <a href="#" className="accent-color orange"></a>
-              <a href="#" className="accent-color pink"></a>
-              <a href="#" className="accent-color purple"></a>
-              <a href="#" className="accent-color gray"></a>
-              <a href="#" className="accent-color green"></a>
+              <a
+                href="#"
+                onClick={() => setAccentColorPreference("default")}
+                className="accent-color default"
+              ></a>
+              <a
+                href="#"
+                onClick={() => setAccentColorPreference("orange")}
+                className="accent-color orange"
+              ></a>
+              <a
+                href="#"
+                onClick={() => setAccentColorPreference("pink")}
+                className="accent-color pink"
+              ></a>
+              <a
+                href="#"
+                onClick={() => setAccentColorPreference("purple")}
+                className="accent-color purple"
+              ></a>
+              <a
+                href="#"
+                onClick={() => setAccentColorPreference("gray")}
+                className="accent-color gray"
+              ></a>
+              <a
+                href="#"
+                onClick={() => setAccentColorPreference("green")}
+                className="accent-color green"
+              ></a>
             </div>
           </div>
         </section>
