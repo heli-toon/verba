@@ -2,14 +2,11 @@ import { useCallback, useEffect, useState } from "react";
 
 export default function Settings() {
   // Accent
-  const [accentColor, setAccentColor] = useState("default");
+  const [accentColor, setAccentColor] = useState(() => {
+    const storedAccentColor = localStorage.getItem('accentColor');
+    return storedAccentColor || 'default';
+  });
 
-  useEffect(() => {
-    const storedAccentColor = localStorage.getItem("accentColor");
-    if (storedAccentColor) {
-      setAccentColor(storedAccentColor);
-    }
-  }, []);
   useEffect(() => {
     localStorage.setItem("accentColor", accentColor);
     document.body.classList.remove(

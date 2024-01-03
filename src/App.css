@@ -404,6 +404,7 @@ header .search-box button:hover {
   justify-content: center;
   background: var(--bg-sec);
   border-radius: var(--border-rad-card);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 }
 .settings h1{
   margin-bottom: 1rem;
