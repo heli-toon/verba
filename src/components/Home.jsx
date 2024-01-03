@@ -1,12 +1,45 @@
-import SearchHeader from "./SearchHeader";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import fetchWordDefinition from "./Api.jsx";
 
-export default function App() {
+export default function Home() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [bestMatches, setBestMatches] = useState([]);
+
+  function handleSearch(event) {
+    event.preventDefault();
+    fetchWordDefinition(searchTerm).then((response) => {
+      setBestMatches(response.data);
+    });
+  }
+
   return (
     <>
       <main>
-        <SearchHeader />
+        <header>
+          <div className="search-box">
+            <form onSubmit={handleSearch} className="search-form">
+              <input
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
+                type="search"
+                className="search"
+                placeholder="Search"
+              />
+              <button type="submit" className="btn">
+                <i className="bi-search"></i>
+              </button>
+            </form>
+          </div>
+        </header>
         <section className="content">
-          
+          <ul className="list-box">
+            {bestMatches.map((match) => (
+              <li className="list-item" key={match.word}>
+                <Link to={`/word/${match.word}`}>{match.word}</Link>
+              </li>
+            ))}
+          </ul>
         </section>
       </main>
     </>

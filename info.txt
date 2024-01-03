@@ -3,9 +3,7 @@ Night Mode [Toggle button]
 
 Verba: Depth and authenticity
 
-can you do the same for accent color links. when a accent color link is clicked, replace the current accent color with the clicked accent color. And also keep in localStorage
-
-fetch data about a word from api.dictionaryapi.dev/v2/entries/en/<word>. I only want word, meaning, wordclass/partofspeech, phonetics, pronounciation, examples of use ,synonyms&antonyms and display them
+can you modify the code to fetch the following word, meaning, wordclass/partofspeech, phonetics, pronounciation(audio), examples of use ,synonyms&antonyms and display them
 
 Search functionality. As user types checks api for closest match words.  
 
@@ -22,3 +20,34 @@ create a pwaserviceworker and register it.
 Build to apk & exe etc. ... on pwabuilder
 
 Put on PWAStore & APKPure
+
+
+
+  const { meanings } = definition;
+
+  if (!meanings || meanings.length === 0) {
+    return <div>No definitions found for {word}.</div>;
+  }
+
+  const { partOfSpeech, definitions } = meanings[0];
+  const phonetics = meanings[0].phonetics[0];
+  const { text, audio } = phonetics;
+
+<h1>{definition.word}</h1>
+            <p>Part of speech: {partOfSpeech}</p>
+            <p>Phonetics: {text}</p>
+            <audio src={audio} controls />
+            <h2>Definitions:</h2>
+            {definitions.map((definition, index) => (
+              <div key={index}>
+                <p>{definition.definition}</p>
+                <h3>Examples:</h3>
+                <ul>
+                  {definition.examples.map((example, index) => (
+                    <li key={index}>{example.text}</li>
+                  ))}
+                </ul>
+                <p>Synonyms: {definition.synonyms.join(", ")}</p>
+                <p>Antonyms: {definition.antonyms.join(", ")}</p>
+              </div>
+            ))}

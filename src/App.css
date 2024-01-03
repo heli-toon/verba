@@ -1,16 +1,10 @@
-@font-face {
-  font-family: "Afcad";
-  src: url("../fonts/Afacad-Regular.ttf");
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 *:before,
-*:after {
-  box-sizing: border-box;
-}
+*:after {box-sizing: border-box;}
 body {
   font-size: 15px;
   font-family: "Geist", "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
@@ -37,9 +31,7 @@ body {
   --anim-short: 250ms;
   --anim-mid: 600ms;
   --anim-long: 1s;
-  /* --primary: var(--gray); */
 }
-
 .light {
   --bg: var(--white1);
   --bg-sec: var(--white2);
@@ -77,7 +69,6 @@ body {
   --primary: var(--pink);
   --accent-color: var(--pink);
   background: var(--primary);
-
 }
 .purple {
   --primary: var(--purple);
@@ -253,7 +244,6 @@ nav .logo img {
 .logo .logo-link:hover {
   color: var(--primary);
 }
-
 /* SMALL */
 @media only screen and (max-width: 600px) {
   .navbar {
@@ -310,7 +300,6 @@ nav .logo img {
     display: none;
   }
 }
-
 /* LARGE */
 @media only screen and (min-width: 601px) {
   .navbar {
@@ -394,7 +383,6 @@ header .search-box button i {
 header .search-box button:hover {
   background: var(--primary);
 }
-
 .settings{
   width: 100%;
   display: flex;
@@ -502,4 +490,26 @@ input:checked + .slider:before {
 }
 .list-item .delete:hover{
   filter: brightness(1.2);
+}
+.hidden{
+  display: none;
+}
+.bookmarks{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--bg-teri);
+  border-radius: var(--border-rad-card);
+  gap: 1rem;
+}
+.word-def{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  background: var(--bg-teri);
+  border-radius: var(--border-rad-card);
+  gap: 1rem;
 }
