@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" href="/logo.png" />
     <link rel="manifest" href="/manifest.json" />
     <title>Verba</title>
-    <script type="module" defer>
+    <script type="module">
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker.register("/service-worker.js");
@@ -28,5 +28,6 @@
   <body class="light default">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/service-worker.js"></script>
   </body>
 </html>
