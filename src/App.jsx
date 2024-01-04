@@ -3,6 +3,7 @@ import "./App.css";
 import "./bootstrap-icons.min.css";
 import Navbar from "./components/Navbar.jsx";
 
+
 export default function App() {
   const [isDarkTheme] = useState(() => {
     const storedValue = localStorage.getItem("isDarkTheme");

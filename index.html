@@ -1,10 +1,29 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Verba is an authentic pocket dictionary which provides accurate and up-to-date word definitions"
+    />
+    <meta
+      name="keywords"
+      content="Verba, Verba Dictionary, Authentic Dictionary"
+    />
+    <meta name="theme-color" content="#139ef1" />
+    <link rel="shortcut icon" href="/logo.png" type="image/png" />
     <link rel="icon" type="image" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="manifest" href="/manifest.json" />
     <title>Verba</title>
+    <script type="module" defer>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
   </head>
   <body class="light default">
     <div id="root"></div>

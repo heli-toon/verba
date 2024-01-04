@@ -26,7 +26,7 @@ export default function Home() {
                 className="search"
                 placeholder="Search"
               />
-              <button type="submit" className="btn">
+              <button type="submit" className="btn" title="Search">
                 <i className="bi-search"></i>
               </button>
             </form>
