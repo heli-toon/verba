@@ -1,13 +1,8 @@
-Theme Color [Blue: #139EF1] [Default Gray: #607D8B] [Orange: #FE5722] [Purple: #8b4cca] [Pink: #EA1E63]
-Night Mode [Toggle button]
-
 Verba: Depth and authenticity
 
-can you modify the code to fetch the following word, meaning, wordclass/partofspeech, phonetics, pronounciation(audio), examples of use ,synonyms&antonyms and display them
-
-Search functionality. As user types checks api for closest match words.  
-
 Is it possible to check how much local storage is remaining? If so, create a meter that represents the amount of localStorage used as well as a percentage
+
+___Later___
 
 Save api collection for a word to local storage.
 
@@ -28,26 +23,3 @@ Put on PWAStore & APKPure
   if (!meanings || meanings.length === 0) {
     return <div>No definitions found for {word}.</div>;
   }
-
-  const { partOfSpeech, definitions } = meanings[0];
-  const phonetics = meanings[0].phonetics[0];
-  const { text, audio } = phonetics;
-
-<h1>{definition.word}</h1>
-            <p>Part of speech: {partOfSpeech}</p>
-            <p>Phonetics: {text}</p>
-            <audio src={audio} controls />
-            <h2>Definitions:</h2>
-            {definitions.map((definition, index) => (
-              <div key={index}>
-                <p>{definition.definition}</p>
-                <h3>Examples:</h3>
-                <ul>
-                  {definition.examples.map((example, index) => (
-                    <li key={index}>{example.text}</li>
-                  ))}
-                </ul>
-                <p>Synonyms: {definition.synonyms.join(", ")}</p>
-                <p>Antonyms: {definition.antonyms.join(", ")}</p>
-              </div>
-            ))}

@@ -11,6 +11,7 @@ body {
     "Segoe UI", Oxygen, Ubuntu, sans-serif;
   overflow-x: hidden;
   background: var(--bg)!important;
+  color: var(--text-color);
 }
 :root {
   --black1: #18191a;
@@ -220,7 +221,7 @@ nav .logo {
 }
 nav .logo img {
   transform: rotate(0deg);
-  transition: transform var(--anim-mid);
+  transition: transform var(--anim-mid) ease;
 }
 .navbar:hover .logo img {
   transform: rotate(360deg);
@@ -237,6 +238,7 @@ nav .logo img {
 .logo img {
   height: 2em;
   width: 2em;
+  border-image: fill 0 var(--primary);
 }
 .logo .logo-link {
   color: var(--text-color);
@@ -512,4 +514,42 @@ input:checked + .slider:before {
   background: var(--bg-teri);
   border-radius: var(--border-rad-card);
   gap: 1rem;
+}
+.command{
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.word-def .word{
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+.word-class{
+  background: var(--primary);
+  padding: .7em;
+  border-radius: var(--border-rad-card);
+  width: max-content;
+  margin-bottom: 1em;
+}
+.word-definition{
+  margin-bottom: 1em;
+}
+.word-def .other{
+  margin-bottom: 1em;
+}
+.word-def .first-word-row{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.word-def .volume-button{
+  font-size: 2rem;
+  padding: .4rem;
+  border-radius: var(--border-rad-round);
+  background: var(--bg-teri);
+  transition: all var(--anim-short);
+  cursor: pointer;
+}
+.word-def .volume-button:hover{
+  color: var(--primary);
+  filter: brightness(1.2);
 }
