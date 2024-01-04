@@ -20,7 +20,7 @@
     <script type="module">
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("/service-worker.js");
+          navigator.serviceWorker.register("./service-worker.js");
         });
       }
     </script>
@@ -28,6 +28,6 @@
   <body class="light default">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script type="module" src="/service-worker.js"></script>
+    <script type="module" src="./service-worker.js"></script>
   </body>
 </html>
