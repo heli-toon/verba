@@ -477,17 +477,21 @@ input:checked + .slider:before {
   flex-direction: column;
 }
 .list-item{
-  background: var(--bg-teri);
+  background: var(--bg-sec);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
   border-radius: var(--border-rad-card);
+  width: 100%;
+}
+.list-item a{
+  width: 100%;
 }
 .list-item .delete{
   height: 100%;
   border-radius: var(--border-rad-card);
-  background-color: var(--bg-teri);
+  background-color: var(--bg-sec);
   padding: 0 1rem;
 }
 .list-item .delete:hover{
@@ -501,8 +505,8 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: var(--bg-teri);
+  padding: 3rem;
+  background: var(--bg-sec);
   border-radius: var(--border-rad-card);
   gap: 1rem;
 }
@@ -511,7 +515,7 @@ input:checked + .slider:before {
   flex-direction: column;
   justify-content: center;
   padding: 3rem;
-  background: var(--bg-teri);
+  background: var(--bg-sec);
   border-radius: var(--border-rad-card);
   gap: 1rem;
 }
@@ -521,7 +525,6 @@ input:checked + .slider:before {
 }
 .word-def .word{
   font-size: 2.5rem;
-  text-transform: capitalize;
 }
 .word-class{
   background: var(--primary);
