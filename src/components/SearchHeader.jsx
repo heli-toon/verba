@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { fetchWordDefinition } from './Api.jsx';
 
 export default function SearchHeader() {
