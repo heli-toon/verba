@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </header>
         <section className="content">
-          <h3 className="command">Search for something..</h3>
+          <h3 className="command">Search for something by typing in the search bar..</h3>
           <ul className="list-box">
             {bestMatches.map((match) => (
               <li className="list-item" key={match.word}>
